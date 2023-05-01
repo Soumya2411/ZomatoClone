@@ -1,4 +1,4 @@
-import React,{ useState } from "react";
+import React,{ useEffect, useState } from "react";
 import './Searchbar.css';
 import './FoodData'
 import Form from 'react-bootstrap/Form'
@@ -6,7 +6,26 @@ import Fooddata from "./FoodData";
 import Cards from "./Cards";
 
 const search = () => {
-const[fdata,setFdata] = useState(Fooddata)
+const[fdata,setFdata] = useState(Fooddata);
+//console.log(fdata);
+
+
+const[copydata,setCopyData]=useState([]);
+console.log(copydata);
+
+
+
+useEffect(()=>{
+
+setTimeout(()=>{
+    setCopyData(Fooddata)
+
+},3000)
+
+
+},[])
+
+
 return(
     <div>
         <div className="container d-flex justify-content-between align-items-center">
@@ -25,7 +44,10 @@ return(
 <section className="item_section mt-4 container">
     <h2 className="px-4" style={{fontweight:400}}>Restauarnts in Delhiii</h2>
     <div className="row mt-2 d-flex justify-content-around align-items-center">
-        <Cards data={fdata} />
+
+
+        //agr copydata m koi value hogi to dikhynge ni to 3 sec k liye delay//
+       {copydata && copydata.length ? <Cards data={fdata} />:"empty"}
     </div>
 
 </section>
