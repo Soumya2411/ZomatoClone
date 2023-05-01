@@ -1,12 +1,12 @@
 
 import React from 'react';
-import Footer from './Components/Footer';
 
+import Searchbar from './Components/Searchbar'
 function App() {
   return (
     <div>
+      <Searchbar/>
       
-      <Footer />
     </div>
   );
 }
