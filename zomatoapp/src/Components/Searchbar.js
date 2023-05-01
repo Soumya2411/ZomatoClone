@@ -11,9 +11,19 @@ const[fdata,setFdata] = useState(Fooddata);
 
 
 const[copydata,setCopyData]=useState([]);
-console.log(copydata);
+//console.log(copydata);
 
+const changeData=(e)=>{
+let getchangedata=e.toLowerCase();
+if(getchangedata==' '){
+setCopyData(fdata);
+}else{
+ let storedata=copydata.filter((ele,k)=>{
+   return ele.rname.toLowerCase().match(getchangedata)
+ })   
 
+ setCopyData(storedata)
+}
 
 useEffect(()=>{
 
@@ -37,7 +47,9 @@ return(
         <Form className='d-flex justify-content-center align-items-center mt-3'>
                 <Form.Group className=" mx-2 col-lg-4" controlId="formBasicEmail">
 
-                    <Form.Control type="text" placeholder="Search Restaurant" />
+                    <Form.Control type="text" 
+                    onChange={(e)=>changeData(e.target.value)}
+                    placeholder="Search Restaurant" />
                 </Form.Group>
                
             </Form>
@@ -47,7 +59,7 @@ return(
 
 
         //agr copydata m koi value hogi to dikhynge ni to 3 sec k liye delay//
-       {copydata && copydata.length ? <Cards data={fdata} />:"empty"}
+       {copydata && copydata.length ? <Cards data={copydata} />:"empty"}
     </div>
 
 </section>
