@@ -20,7 +20,7 @@ return(
 
                     <Form.Control type="text" placeholder="Search Restaurant" />
                 </Form.Group>
-                <button className='btn text-light col-lg-1' style={{ background: "#ed4c67" }}>Submit</button>
+               
             </Form>
 <section className="item_section mt-4 container">
     <h2 className="px-4" style={{fontweight:400}}>Restauarnts in Delhiii</h2>
@@ -41,4 +41,4 @@ return(
 
 }
 
-export default Searchbar;
+export default search;
