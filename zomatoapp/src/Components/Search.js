@@ -4,6 +4,7 @@ import './FoodData'
 import Form from 'react-bootstrap/Form'
 import Fooddata from "./FoodData";
 import Cards from "./Cards";
+import Set from './Set'
 
 const search = () => {
 const[fdata,setFdata] = useState(Fooddata);
@@ -64,12 +65,13 @@ return(
 
 </section>
 
-
+<Set/>
 </div>
 
 
 
 )
+}
 
 
 
