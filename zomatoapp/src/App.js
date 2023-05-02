@@ -1,13 +1,13 @@
 
-import React from 'react';
+import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Search from './components/Search';
 
-import Searchbar from './Components/Search'
 function App() {
   return (
-    <div>
-      <Searchbar/>
-      
-    </div>
+  <>
+   <Search />
+  </>
   );
 }
 
